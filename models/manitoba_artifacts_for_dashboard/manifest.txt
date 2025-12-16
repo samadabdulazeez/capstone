@@ -1,0 +1,19 @@
+ridge_pruned.joblib - Ridge pipeline (if saved)
+rf_pruned.joblib - RandomForest model (if saved)
+scaler.joblib - StandardScaler used for Ridge (if saved)
+pca.joblib - PCA used on temperature features (if saved)
+feature_list.json - ordered feature names used for training (if saved)
+preds_pruned_ensemble.csv - OOF predictions and residuals (if saved)
+requirements.txt - pip freeze output (recommended)
+stacker_ridge_on_oof.joblib - Ridge meta-learner trained on OOF preds
+oof_with_meta.csv - OOF rows with meta predictions
+
+rf_tuned.joblib - RandomForest tuned via RandomizedSearchCV (8 iters) on 2025-12-14 18:13:47.986344
+Best params: {"bootstrap": true, "max_depth": 12, "max_features": 0.5, "min_samples_leaf": 2, "min_samples_split": 7, "n_estimators": 274}
+OOF_MAE: 391.843
+
+stacker_ridge_final.joblib - retrained on merged OOFs (oof_ridge.csv + oof_rf_tuned.csv)
+alpha: 100.0, OOF_MAE: 373.001, OOF_RMSE: 455.548, OOF_R2: 0.027
+
+ridge_tuned.joblib - Ridge tuned via GridSearchCV on 2025-12-14 18:26:49.679090
+Best alpha: 100.0, OOF_MAE: 551.049
